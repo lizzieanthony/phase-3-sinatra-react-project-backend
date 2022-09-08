@@ -1,3 +1,34 @@
+
+# Flex Phase 3 Backend Build 
+
+This is the backend for a workout planning app created for Flatioron School to showcase skills in ruby and active record.
+
+### requirements 
+* ruby version 2.7.6
+* sqlite3 version 3.37.0
+
+## How to use
+fork and clone 
+bundle install
+rake db:migrate
+rake db:seed
+rake server
+follow frontend directions (url)
+
+##git licensing 
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------
+
 # Phase 3 Project Guidelines
 
 ## Learning Goals
