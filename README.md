@@ -3,6 +3,9 @@
 
 This is the backend for a workout planning app created for Flatioron School to showcase skills in ruby and active record.
 
+### Frontend Repo
+- [Frontend Repo URL](https://github.com/lizzieanthony/-phase-3-sinatra-react-project-frontend)
+
 ### requirements 
 * ruby version 2.7.6
 * sqlite3 version 3.37.0
@@ -15,16 +18,7 @@ rake db:seed
 rake server
 follow frontend directions (url)
 
-##git licensing 
-
-
-
-
-
-
-
-
-
+## git licensing 
 
 
 -------------------------------------------------------------
