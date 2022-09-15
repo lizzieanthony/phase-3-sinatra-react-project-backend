@@ -2,23 +2,13 @@ class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
   
   get '/workouts' do
-    workouts = Workouts.all
-    workouts.to_json
+    workouts = Workout.all
+    workouts.to_json(include: :exercises)
   end
 
   get "/exercises" do
     exercises = Exercise.all
     exercises.to_json
-  end
-
-  get '/exercise-workouts' do 
-    exercise_workouts = ExerciseWorkout.all
-    exercise_workouts.to_json
-  end
-
-  get '/category' do
-    categories = Category.all
-    categories.to_json 
   end
 
   post '/workouts' do 
@@ -28,12 +18,13 @@ class ApplicationController < Sinatra::Base
     )
     workout.to_json 
   end
+  # post '/exercises' do 
 
-  post '/exercises' do 
-    exercise = Exercise.create(
+  post '/workouts/:workout_id/exercises' do
+    workout = Workout.find(params[:workout_id]) 
+    exercise = workout.exercises.create(
       name: params[:name],
-      instructions: params [:instructions],
-      category_id: params[:category_id]
+      instructions: params[:instructions],
     )
     exercise.to_json 
   end
@@ -44,7 +35,7 @@ class ApplicationController < Sinatra::Base
     workout.to_json
   end
 
-  patch '/workouts/:id' dp 
+  patch '/workouts/:id' do 
     workout = Workout.find(params[:id])
     workout.update(
       name: params[:name],
@@ -52,5 +43,5 @@ class ApplicationController < Sinatra::Base
     )
     workout.to_json 
   end
-  
+
 end

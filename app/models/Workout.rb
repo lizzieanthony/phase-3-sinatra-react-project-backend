@@ -1,6 +1,4 @@
 class Workout < ActiveRecord::Base 
-    has_many :exercises, through: :workout_exercises
+    has_many :exercises
 
-    validates :name, presence: true, uniqueness: true 
-    validates :directions, presence: true 
 end 
