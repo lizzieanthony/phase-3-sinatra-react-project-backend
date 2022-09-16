@@ -6,6 +6,11 @@ class ApplicationController < Sinatra::Base
     workouts.to_json(include: :exercises)
   end
 
+  # # get'/workouts/:id' do
+  #   workouts = Workout.all
+  #   workouts.to_json(include: :exercises)
+  # end
+
   get "/exercises" do
     exercises = Exercise.all
     exercises.to_json
