@@ -23,7 +23,6 @@ class ApplicationController < Sinatra::Base
     )
     workout.to_json 
   end
-  # post '/exercises' do 
 
   post '/workouts/:workout_id/exercises' do
     workout = Workout.find(params[:workout_id]) 
@@ -40,13 +39,19 @@ class ApplicationController < Sinatra::Base
     workout.to_json
   end
 
+  delete '/workouts/:workout_id/exercises/:exercise_id' do
+    exercise = Exercise.find(params[:exercise_id]) 
+    exercise.destroy
+    exercise.to_json
+  end
+
   patch '/workouts/:id' do 
     workout = Workout.find(params[:id])
     workout.update(
       name: params[:name],
       directions: params[:directions]
     )
-    workout.to_json 
+    workout.to_json(include: :exercises)
   end
 
 end
