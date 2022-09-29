@@ -1,10 +1,12 @@
 # Social Sweat
 
-## Flex Phase 3 Backend Build
+### Flatiron Phase 3 Project Frontend Build
 
 Social Sweat is a single-page application built with a Ruby/Sinatra backend and a React frontend. The backend has a one-to-many model of Workouts and a belongs-to model for Exercises. The application controller file has all of the CRUD routes built out in the backend to interact with the frontend react build.  
 
 This site was created for users to share their workouts, edit them, and delete them. There is also functionality to add and delete exercises from individual workouts and to edit the workout details as well. For additional information on how tu use the side you can refer to this - [tutorial](https://www.loom.com/share/a7a74ac9e7364412842ec6d38e4221c5) 
+
+# Setup
 
 ### Backend Setup
 
